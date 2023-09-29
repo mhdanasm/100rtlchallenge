@@ -22,7 +22,7 @@ module tb;
   
   always @(p1a,p1b,p1c,p1d) begin
     c1=p1a+p1b+p1c+p1d;
-    c1=c1%2;
+    c1=(c1==4);
     if(p1y==!c1)
       $display("\nsucces1 time=%0t\n",$time);
     else begin
@@ -33,8 +33,8 @@ module tb;
   
     always @(p2a,p2b,p2c,p2d) begin
     c2=p2a+p2b+p2c+p2d;
-    c2=c2%2;
-    if(p1y==!c1)
+      c2=(c2==4);
+      if(p2y==!c2)
       $display("\nsucces2 time=%0t\n",$time);
     else begin
       $display("\nfail2 time=%0t\n",$time);
